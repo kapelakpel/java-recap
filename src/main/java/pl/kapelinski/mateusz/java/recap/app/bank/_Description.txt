@@ -1,0 +1,8 @@
+Aplikacja na potrzeby banku:
+1. przechowuje liste kont
+2. umozliwia wplate i wyplate z konta
+3. umozliwia przelewy miedzy kontami
+
+1. Account
+2. Bank
+3. Transfer
