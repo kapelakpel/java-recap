@@ -62,4 +62,8 @@ public class Bank {
 //dopsiac reszte w addClient - DONE
 
 // TODO: 11.05.2022
-//Zrobic kilka commitow rozlozonych w czasie z odpowiadajacym opisem. Przeczytac sekcje collaboration
+//Zrobic kilka commitow rozlozonych w czasie z odpowiadajacym opisem. Przeczytac sekcje collaboration - DONE
+
+// TODO: 18.05.2022
+//1. AddClient exception do poprawienie trows golniejszy wyjatek - throw new dokladniejszy wyjatek
+//2. Wszystkie wyjatki rozszerzaja wyjatek BankException

@@ -8,7 +8,7 @@ public class Client {
     private String idNumber;
     private Account account;
 
-    public Client(String name, String surname, String idNumber) {
+    public Client(String name, String surname, String idNumber) throws AccountNumberGeneratorException {
         this.name = name;
         this.surname = surname;
         this.idNumber = idNumber;
