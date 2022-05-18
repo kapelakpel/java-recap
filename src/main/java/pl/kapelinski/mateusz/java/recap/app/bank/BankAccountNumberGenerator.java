@@ -14,7 +14,7 @@ public class BankAccountNumberGenerator {
 //            int n = rand.nextInt(10);
 //            number += Integer.toString(n);
 //        }
-        if (numberRandom >= 1000) {
+        if (numberRandom >= 1000) { //I want to have four digits account number.
             number = String.valueOf(numberRandom);
         } else {
             throw new AccountNumberGeneratorException("Account number out of bound");
