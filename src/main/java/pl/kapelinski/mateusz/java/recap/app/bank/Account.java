@@ -21,22 +21,37 @@ public class Account {
         this.balance = new BigDecimal("0");
     }
 
-    public BigDecimal withdraw(double amount) {
+    public BigDecimal withdraw(double amount) throws AccountWithdrawException {
         System.out.println("withdraw(" + amount + ")");
         //BigDecimal outputValue = BigDecimal.ZERO;
-        BigDecimal outputValue = balance.subtract(BigDecimal.valueOf(amount));
-        this.balance = outputValue;
-        return outputValue;
+        if (amount > 0) {
+//            if ((balance.subtract(BigDecimal.valueOf(amount))).intValue() >= 0) {
+            if ((balance.subtract(BigDecimal.valueOf(amount))).compareTo(BigDecimal.ZERO)>=0) {
+                BigDecimal outputValue = balance.subtract(BigDecimal.valueOf(amount));
+                this.balance = outputValue;
+                return outputValue;
+            } else {
+                throw new AccountWithdrawException("Insufficient funds");
+            }
+        } else {
+            throw new AccountWithdrawException("Cannot withdraw negative amount");
+        }
     }
 
-    public BigDecimal topUp(double amount) {
-        BigDecimal outputValue = new BigDecimal("0");
-        outputValue = balance.add(BigDecimal.valueOf(amount));
-        this.balance = outputValue;
-        return outputValue;
+    public BigDecimal topUp(double amount) throws AccountTopUpException {
+        System.out.println("topUp(" + amount + ")");
+        if (amount > 0) {
+            BigDecimal outputValue = new BigDecimal("0");
+            outputValue = balance.add(BigDecimal.valueOf(amount));
+            this.balance = outputValue;
+            return outputValue;
+        } else {
+            throw new AccountTopUpException("Negative topup amount");
+        }
+
     }
 
-    public void printStatus(){
+    public void printStatus() {
 //        switch(AccountStatus.ACTIVE.getStatusNumber()){
 //            case 1:
 //                System.out.println("Twoje konto jest NIEAKTYWNE");
@@ -48,12 +63,25 @@ public class Account {
 //                System.out.println("Twoje konto jest USUNIETE");
 //        }
         switch (this.accountStatus) {
-            case ACTIVE:{
+            case ACTIVE: {
                 System.out.println("Twoje konto jest aktywne");
                 break;
             }
-            default:{
+            case INACTIVE: {
+                System.out.println("Twoje konto jest nieaktywne");
+                break;
+            }
+            case DELETED: {
+                System.out.println("Twoje konto jest usuniete");
+                break;
+            }
+            case SUSPENDED: {
+                System.out.println("Twoje konto jest zawieszone");
+                break;
+            }
+            default: {
                 System.out.println("Nieznany status konta");
+                break;
             }
         }
     }
@@ -80,16 +108,6 @@ public class Account {
                 '}';
     }
 
-//    public String generate() {
-//        rand = new Random();
-//        String number = "";
-//        for (int i = 0; i < 15; i++) {
-//            int n = rand.nextInt(10);
-//            number += Integer.toString(n);
-//        }
-//        return number;
-//    }
-
 }
 
 // TODO: 06.05.2022
@@ -98,3 +116,4 @@ public class Account {
 // TODO: 11.05.2022
 //Kazda metoda publiczna powinna rzucac wyjatek.
 //Stworzyc wlasne wyajtki biznesowe np. AccountWithdrawException
+//Czy dla metod w Account tylko dwa wyjatki? Czy drukowanie statusu tez powinnno miec oraz hash?
