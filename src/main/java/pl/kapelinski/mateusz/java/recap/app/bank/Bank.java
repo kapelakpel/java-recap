@@ -1,5 +1,8 @@
 package pl.kapelinski.mateusz.java.recap.app.bank;
 
+import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.ClientAddException;
+import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.ClientDeleteException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +31,7 @@ public class Bank {
         }
     }
 
-    public Client add(Client newClient) throws ClientAddException{
+    public Client add(Client newClient) throws ClientAddException {
         System.out.println("add(" + newClient + ")");
         if (clients.contains(newClient)) {
            throw new ClientAddException("Already in system");
