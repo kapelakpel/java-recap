@@ -86,6 +86,21 @@ public class Account {
         }
     }
 
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -107,7 +122,6 @@ public class Account {
                 ", balance=" + balance +
                 '}';
     }
-
 }
 
 // TODO: 06.05.2022
