@@ -1,6 +1,6 @@
-package pl.kapelinski.mateusz.java.recap.app.bank;
+package pl.kapelinski.mateusz.java.recap.app.bank.api.exception;
 
-public class AccountTopUpException extends Exception {
+public class AccountTopUpException extends BankException {
     public AccountTopUpException(String message) {
         super(message);
     }

@@ -1,4 +1,6 @@
-package pl.kapelinski.mateusz.java.recap.app.bank;
+package pl.kapelinski.mateusz.java.recap.app.bank.ui.model;
+
+import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.AccountNumberGeneratorException;
 
 import java.util.Objects;
 

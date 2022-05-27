@@ -1,7 +1,11 @@
 package pl.kapelinski.mateusz.java.recap.app.bank;
 
+import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.AccountTopUpException;
+import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.AccountWithdrawException;
 import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.ClientAddException;
 import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.ClientDeleteException;
+import pl.kapelinski.mateusz.java.recap.app.bank.ui.model.Account;
+import pl.kapelinski.mateusz.java.recap.app.bank.ui.model.Client;
 
 import java.util.ArrayList;
 import java.util.List;

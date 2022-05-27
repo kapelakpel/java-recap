@@ -1,4 +1,4 @@
-package pl.kapelinski.mateusz.java.recap.app.bank;
+package pl.kapelinski.mateusz.java.recap.app.bank.ui.model;
 
 public class Address
 {
@@ -80,7 +80,7 @@ public class Address
 //        }
 //
 //        public Address build() {
-//            Address address = new pl.kapelinski.mateusz.java.recap.app.bank.AddressBuilder().setBuilder(this).createAddress();
+//            Address address = new pl.kapelinski.mateusz.java.recap.app.bank.ui.model.AddressBuilder().setBuilder(this).createAddress();
 //            return address;
 //        }
 //
