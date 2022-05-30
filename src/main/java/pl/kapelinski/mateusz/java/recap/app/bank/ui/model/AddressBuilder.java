@@ -1,4 +1,4 @@
-package pl.kapelinski.mateusz.java.recap.app.bank;
+package pl.kapelinski.mateusz.java.recap.app.bank.ui.model;
 
 public class AddressBuilder {
     private String city;

@@ -1,6 +1,6 @@
-package pl.kapelinski.mateusz.java.recap.app.bank;
+package pl.kapelinski.mateusz.java.recap.app.bank.api.exception;
 
-public class AccountNumberGeneratorException extends Exception {
+public class AccountNumberGeneratorException extends BankException {
 
     public AccountNumberGeneratorException(String message) {
         super(message);

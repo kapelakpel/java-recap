@@ -1,4 +1,7 @@
-package pl.kapelinski.mateusz.java.recap.app.bank;
+package pl.kapelinski.mateusz.java.recap.app.bank.ui.model;
+
+import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.AccountTopUpException;
+import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.AccountWithdrawException;
 
 import java.math.BigDecimal;
 import java.util.Objects;
