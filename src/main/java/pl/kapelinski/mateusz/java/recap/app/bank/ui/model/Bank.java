@@ -1,6 +1,11 @@
-package pl.kapelinski.mateusz.java.recap.app.bank.ui.model;
+package pl.kapelinski.mateusz.java.recap.app.bank;
 
-import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.*;
+import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.AccountTopUpException;
+import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.AccountWithdrawException;
+import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.ClientAddException;
+import pl.kapelinski.mateusz.java.recap.app.bank.api.exception.ClientDeleteException;
+import pl.kapelinski.mateusz.java.recap.app.bank.ui.model.Account;
+import pl.kapelinski.mateusz.java.recap.app.bank.ui.model.Client;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +35,7 @@ public class Bank {
         }
     }
 
-    public Client add(Client newClient) throws ClientException {
+    public Client add(Client newClient) throws ClientAddException {
         System.out.println("add(" + newClient + ")");
         if (clients.contains(newClient)) {
            throw new ClientAddException("Already in system");
@@ -59,10 +64,13 @@ public class Bank {
     }
 }
 
+// TODO: 06.05.2022
+//Dodac generowanie uniklanych numerow kont we wlasciwym miejscu (podczas tworzenia klienta)
+//dopsiac reszte w addClient - DONE
 
+// TODO: 11.05.2022
+//Zrobic kilka commitow rozlozonych w czasie z odpowiadajacym opisem. Przeczytac sekcje collaboration - DONE
 
 // TODO: 18.05.2022
-// dla kazdego modelu dziedziny np. account stworzyc np. AccountRepository, AccountService, AccountController, a modele przeniesc
-
-// TODO: 27.05.2022
-// Dodać refaktoryzacje zmian nazw exception na zwiazane z bankiem
+//1. AddClient exception do poprawienie trows golniejszy wyjatek - throw new dokladniejszy wyjatek
+//2. Wszystkie wyjatki rozszerzaja wyjatek BankException
