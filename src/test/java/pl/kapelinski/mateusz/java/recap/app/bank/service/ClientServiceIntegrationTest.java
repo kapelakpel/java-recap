@@ -13,13 +13,13 @@ class ClientServiceIntegrationTest {
         //GIVEN
         ClientRepository clientRepository = new ClientRepository();
         ClientService clientService = new ClientService(clientRepository);
-        Client client = new Client("Mateusz","Kapelinski","1");
+        Client client = new Client("Mateusz", "Kapelinski", "1");
 
         //WHEN
         Client createdClient = clientService.create(client);
 
         //THEN
-        Assertions.assertNotNull(createdClient,"createdClient is null");
+        Assertions.assertNotNull(createdClient, "createdClient is null");
     }
 
     @Test
@@ -27,7 +27,7 @@ class ClientServiceIntegrationTest {
         //GIVEN
         ClientRepository clientRepository = new ClientRepository();
         ClientService clientService = new ClientService(clientRepository);
-        Client client = new Client("Mateusz","Kapelinski","1");
+        Client client = new Client("Mateusz", "Kapelinski", "1");
 
         //WHEN
         int sizeBefore = clientService.list().size();
@@ -35,7 +35,24 @@ class ClientServiceIntegrationTest {
         int sizeAfter = clientService.list().size();
 
         //THEN
-        Assertions.assertEquals(sizeBefore+1,sizeAfter,"clientService.list() wrong size");
+        Assertions.assertEquals(sizeBefore + 1, sizeAfter, "clientService.list() wrong size");
+    }
+
+    @Test
+    void givenClientService_whenCreate_thenCreatedClientXXX() throws AccountNumberGeneratorException {
+        //GIVEN
+        ClientRepository clientRepository = new ClientRepository();
+        ClientService clientService = new ClientService(clientRepository);
+        Client client = new Client("Mateusz", "Kapelinski", "1");
+
+        //WHEN
+        Client createdClient = clientService.create(client);
+
+        //THEN
+        Assertions.assertAll(
+                () -> Assertions.assertNotNull(createdClient, "createdClient is null"),
+                () -> Assertions.assertNotNull(createdClient.getIdNumber(), "createdClient idNumber is null")
+        );
     }
 }
 

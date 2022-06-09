@@ -24,3 +24,8 @@ public class BankAccountNumberGenerator {
         return number;
     }
 }
+
+// TODO: 09.06.2022
+//Rozwiazac problem z generowaniem liczb losowych
+//1. Napisac test jednostkowy do metody generate
+//2. moge wykrozsytac petle for zakomentowana
