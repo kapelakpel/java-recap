@@ -17,7 +17,6 @@ public class ClientService {
 
     public Client create(Client client) {
         LOGGER.info("create(" + client + ")");
-        //if(ClientChecker.noDept()){}
         return clientRepository.create(client);
     }
 
