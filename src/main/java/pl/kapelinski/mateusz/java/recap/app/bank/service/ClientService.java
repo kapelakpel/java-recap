@@ -3,6 +3,7 @@ package pl.kapelinski.mateusz.java.recap.app.bank.service;
 import pl.kapelinski.mateusz.java.recap.app.bank.repository.ClientRepository;
 import pl.kapelinski.mateusz.java.recap.app.bank.ui.model.Client;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 public class ClientService {
@@ -14,10 +15,10 @@ public class ClientService {
         this.clientRepository = clientRepository;
     }
 
-    public void create(Client client) {
+    public Client create(Client client) {
         LOGGER.info("create(" + client + ")");
         //if(ClientChecker.noDept()){}
-        clientRepository.create(client);
+        return clientRepository.create(client);
     }
 
     public void read() {
@@ -29,6 +30,8 @@ public class ClientService {
     public void delete() {
     }
 
-    public void list() {
+    public List<Client> list() {
+        LOGGER.info("list()");
+        return clientRepository.list();
     }
 }
