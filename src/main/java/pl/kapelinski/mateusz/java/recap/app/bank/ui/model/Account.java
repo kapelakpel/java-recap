@@ -133,4 +133,4 @@ public class Account {
 // TODO: 11.05.2022
 //Kazda metoda publiczna powinna rzucac wyjatek.
 //Stworzyc wlasne wyajtki biznesowe np. AccountWithdrawException
-//Czy dla metod w Account tylko dwa wyjatki? Czy drukowanie statusu tez powinnno miec oraz hash?
+
