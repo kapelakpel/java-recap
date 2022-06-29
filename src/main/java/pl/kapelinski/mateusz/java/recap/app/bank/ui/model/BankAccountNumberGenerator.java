@@ -7,8 +7,8 @@ import java.util.Random;
 public class BankAccountNumberGenerator {
     //private static Random rand;
 
-    public BankAccountNumberGenerator() {
-    }
+//    public BankAccountNumberGenerator() {
+//    }
 
     public static String generate() throws AccountNumberGeneratorException {
         Random rand = new Random();
