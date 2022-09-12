@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 
-public class Account {
+public class   Account {
     private String number;
     private BigDecimal balance;
     private int state;
